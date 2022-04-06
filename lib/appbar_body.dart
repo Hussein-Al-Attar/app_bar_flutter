@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class appBarBody extends StatefulWidget {
   const appBarBody({Key? key}) : super(key: key);
 
@@ -7,15 +8,16 @@ class appBarBody extends StatefulWidget {
   State<appBarBody> createState() => _appBarBodyState();
 }
 
+// ignore: camel_case_types
 class _appBarBodyState extends State<appBarBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      extendBodyBehindAppBar: false,
       appBar: AppBar(
-          title: Text("image"),
+          title: const Text("image"),
           centerTitle: true,
-          actions: [Icon(Icons.search)]),
+          actions: const [Icon(Icons.search)]),
       body: Image.asset("image/1.jpg", fit: BoxFit.cover),
     );
   }

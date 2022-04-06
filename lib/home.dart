@@ -1,51 +1,42 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class home extends StatefulWidget {
-  home({Key? key}) : super(key: key);
+  const home({Key? key}) : super(key: key);
 
   @override
   State<home> createState() => _homeState();
 }
 
+// ignore: camel_case_types
 class _homeState extends State<home> {
-  String title = "App Bar";
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
-          title: Text("$title"),
+          leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+          title: const Text("App Bar"),
           titleSpacing: 0,
           //centerTitle: true,
           actions: [
             PopupMenuButton(
-              itemBuilder: (context) => [
-                PopupMenuItem(child: Text("Developer")),
-              ],
+              itemBuilder: (context) =>
+                  [const PopupMenuItem(child: Text("Developer"))],
             ),
             IconButton(
                 onPressed: () {
-                  print("hi");
+                  Navigator.of(context).pushNamed("De");
                 },
-                icon: Icon(Icons.developer_board)),
+                icon: const Icon(Icons.developer_board)),
             IconButton(
-                onPressed: () {
-                  print("hi");
-                },
-                icon: Icon(Icons.notifications_none)),
-            IconButton(
-                onPressed: () {
-                  print("hi");
-                },
-                icon: Icon(Icons.search)),
+                onPressed: () {}, icon: const Icon(Icons.notifications_none)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           ],
           // backgroundColor: Colors.red,
           flexibleSpace: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
             gradient: LinearGradient(
                 colors: [Colors.red, Colors.blue],
                 begin: Alignment.topLeft,
@@ -53,7 +44,7 @@ class _homeState extends State<home> {
             // image: DecorationImage(image: NetworkImage()),
           )),
           elevation: 20,
-          bottom: TabBar(indicatorColor: Colors.white, tabs: [
+          bottom: const TabBar(indicatorColor: Colors.white, tabs: [
             Tab(icon: Icon(Icons.home)),
             Tab(icon: Icon(Icons.feed)),
             Tab(icon: Icon(Icons.person)),
@@ -66,18 +57,18 @@ class _homeState extends State<home> {
                   onPressed: () {
                     Navigator.of(context).pushNamed("image");
                   },
-                  child: Text("open"))),
-          Center(
+                  child: const Text("open"))),
+          const Center(
               child: Text(
             "feed",
             style: TextStyle(fontSize: 28),
           )),
-          Center(
+          const Center(
               child: Text(
             "person",
             style: TextStyle(fontSize: 28),
           )),
-          Center(
+          const Center(
               child: Text(
             "settings",
             style: TextStyle(fontSize: 28),
